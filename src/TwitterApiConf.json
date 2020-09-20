@@ -1,0 +1,8 @@
+{
+    "twitter_api_key": "Bearer AAAAAAAAAAAAAAAAAAAAAONuHwEAAAAANF26DzTcU3QmJn3vfG%2BY%2FYTea60%3DvZZbC4cq7VLw1pnCrD2KtvlNGt4GOFapgqUG3kX7kNASZq02iN",
+    "proxyUrl": "https://cors-anywhere.herokuapp.com/",
+    "apiUrl": "https://api.twitter.com/2/",
+    "headers": {
+        "Authorization": "Bearer AAAAAAAAAAAAAAAAAAAAAONuHwEAAAAANF26DzTcU3QmJn3vfG%2BY%2FYTea60%3DvZZbC4cq7VLw1pnCrD2KtvlNGt4GOFapgqUG3kX7kNASZq02iN"
+    }
+}
