@@ -1,14 +1,37 @@
+.app-container {
+  text-align: center;
+  padding: 30px 115px;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.app-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+.twitter-symbol {
+  height: 48px;
+  width: 48px;
+  margin-left: 3px;
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .app-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
