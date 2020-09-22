@@ -16,9 +16,7 @@ const Tweet = (props) => {
           </div>
           <span className='creation-date'>{props.creationDate}</span>
         </div>
-        <div className='tweet-text'>
-          <span>{props.text}</span>
-        </div>
+        <div className='tweet-text'>{props.text}</div>
       </div>
     </div>
   );

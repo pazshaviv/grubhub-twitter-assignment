@@ -7,7 +7,9 @@ const Tweets = (props) => {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   const tweets = props.tweets;
-  if (!tweets || tweets.length === 0) return <p>No tweets, sorry</p>;
+  
+  if (!tweets || tweets.length === 0) return <h2 className='no-tweets'>No tweets, sorry</h2>;
+  console.log(tweets);
   return (
     <div>
       <div className='tweets-container'>
@@ -17,13 +19,26 @@ const Tweets = (props) => {
           return <Tweet key={tweet.id} text={tweet.text} authorName={tweet.authorName} username={tweet.username} creationDate={displayedDate} imageUrl={tweet.imageUrl} />;
         })}
       </div>
-      <div className='pagination-button-container'>
-        <span href='#' className='pagination-button'>
-          Previous<br></br>Page
-        </span>
-        <span href='#' className='pagination-button' onClick={props.nextPageFunction}>
-          Next<br></br>Page
-        </span>
+      <div className='pagination-container'>
+        <div className='pagination-buttons-container'>
+          <span
+            href='#'
+            className='pagination-button'
+            onClick={() => {
+              props.previousPageFunction();
+            }}>
+            Previous<br></br>Page
+          </span>
+          <span
+            href='#'
+            className='pagination-button'
+            onClick={() => {
+              props.nextPageFunction();
+            }}>
+            Next<br></br>Page
+          </span>
+        </div>
+        <p>{props.pageNumber}</p>
       </div>
     </div>
   );

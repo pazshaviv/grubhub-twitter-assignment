@@ -1,13 +1,13 @@
 import apiconf from './TwitterApiConf';
 
-const fetchTweets = async (nextPageToken) => {
+const fetchTweets = async (pageToken) => {
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const apiUrl = 'https://api.twitter.com/2/';
   const headers = { Authorization: apiconf.twitter_api_key };
 
-  let nextPageTokenQueryParam = nextPageToken === '' ? '' : `&next_token=${nextPageToken}`;
+  let pageTokenQueryParam = pageToken === '' ? '' : `&next_token=${pageToken}`;
 
-  const tweetsQuery = `tweets/search/recent?max_results=20&query=%23grubhub&tweet.fields=created_at&expansions=author_id${nextPageTokenQueryParam}`;
+  const tweetsQuery = `tweets/search/recent?max_results=20&query=%23grubhub&tweet.fields=created_at&expansions=author_id${pageTokenQueryParam}`;
   const tweetsHttpRequest = proxyUrl + apiUrl + tweetsQuery;
   let tweetsResponse = await fetch(tweetsHttpRequest, {
     method: 'GET',
@@ -15,8 +15,22 @@ const fetchTweets = async (nextPageToken) => {
   });
 
   let jsonTweetsResult = await tweetsResponse.json();
+  const tweetsCount = jsonTweetsResult.meta.result_count;
+  if (tweetsCount === 0) {
+    return { tweets: [], nextPageToken: '' };
+  }
+
+  console.log('jsonTweetsResult: ');
+  console.log(jsonTweetsResult);
+
   const metadata = jsonTweetsResult.meta;
-  nextPageToken = metadata.next_token;
+  console.log('metadata: ');
+  console.log(metadata);
+
+  const nextPageToken = metadata.next_token;
+  console.log('nextpagetoken: ');
+  console.log(nextPageToken);
+
   let fetchedTweetsData = [...jsonTweetsResult.data];
   const extractedAuthorIds = [];
   for (let tweet of fetchedTweetsData) {
@@ -44,6 +58,8 @@ const fetchTweets = async (nextPageToken) => {
     });
   }
 
+  console.log('before quitting twitterapi:');
+  console.log(nextPageToken);
   return { tweets: tweetsResult, nextPageToken: nextPageToken };
 };
 

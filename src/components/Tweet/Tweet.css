@@ -34,12 +34,26 @@
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
+  min-width: 400px;
 }
 
 .tweet-text {
-  text-overflow: ellipsis;
-  height: 30px;
+  /* text-overflow: ellipsis; */
+  margin-bottom: 5px;
+  /* border: 1px solid black; */
+  overflow-wrap: break-word;
+  /* max-height: 55px; */
+  /* overflow: hidden; */
+  max-width: 100%
 }
+
+/* .tweet-text{
+  border: 1px solid black;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  word-break: normal;
+  height: 30px;
+} */
 
 .image {
   height: 100%;

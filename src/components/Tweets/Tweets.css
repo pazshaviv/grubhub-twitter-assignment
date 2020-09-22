@@ -5,17 +5,21 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  min-width: 800px;
 }
 
-.pagination-button-container {
-  display: flex;
-  justify-content: space-between;
+.pagination-container {
   max-width: 370px;
   margin: auto;
+  /* margin: 5px 30% 5px 30%; */
+}
+.pagination-buttons-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .pagination-button {
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
   color: white;
   padding: 15px 32px;
   /* text-align: center; */
