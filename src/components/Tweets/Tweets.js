@@ -8,6 +8,7 @@ const Tweets = (props) => {
 
   const tweets = props.tweets;
 
+  if (tweets === undefined) return <h2 className='no-tweets'>There was a problem fetching data..</h2>;
   if (!tweets || tweets.length === 0) return <h2 className='no-tweets'>No tweets, sorry</h2>;
 
   return (

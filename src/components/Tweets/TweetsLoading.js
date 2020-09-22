@@ -13,4 +13,5 @@ function TweetsLoading(Component) {
     );
   };
 }
+
 export default TweetsLoading;
