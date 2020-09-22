@@ -8,8 +8,6 @@
   width: 100%;
   display: flex;
   align-items: flex-start;
-  /* max-width: 200px; */
-  /* min-width: 400px; */
 }
 
 .author-name {
@@ -40,22 +38,10 @@
 }
 
 .tweet-text {
-  /* text-overflow: ellipsis; */
   margin-bottom: 5px;
-  /* border: 1px solid black; */
   overflow-wrap: break-word;
-  /* max-height: 55px; */
-  /* overflow: hidden; */
   max-width: 100%
 }
-
-/* .tweet-text{
-  border: 1px solid black;
-  text-overflow: ellipsis;
-  overflow-wrap: break-word;
-  word-break: normal;
-  height: 30px;
-} */
 
 .image {
   height: 100%;

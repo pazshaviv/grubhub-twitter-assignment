@@ -1,6 +1,5 @@
 .tweets-container {
   margin: 0 auto;
-  /* gap: 1rem; */
   padding: 1rem;
   display: flex;
   flex-flow: row wrap;
@@ -9,21 +8,22 @@
 }
 
 .pagination-container {
-  max-width: 370px;
-  margin: auto;
-  /* margin: 5px 30% 5px 30%; */
+  min-width: 800px;
+  align-items: center;
 }
+
 .pagination-buttons-container {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  max-width: 370px;
+  margin: auto;
 }
 
 .pagination-button {
   background-color: #1da1f2;
   color: white;
   padding: 15px 32px;
-  /* text-align: center; */
-  /* display: inline-block; */
   font-size: 16px;
   margin: 0px 2px;
   cursor: pointer;
