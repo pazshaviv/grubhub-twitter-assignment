@@ -19,40 +19,35 @@ const App = () => {
   }, []);
 
   const nextPage = (nextPageToken) => {
-    console.log('in app.js: ' + nextPageToken);
-    console.log('currentPageIndex: ' + currentPageIndex);
-    console.log('pageTokens.length: ' + pageTokens.length);
-    if (currentPageIndex == pageTokens.length) {
+    if (currentPageIndex === pageTokens.length) {
       setPageTokens([...pageTokens, nextPageToken]);
       setCurrentPageIndex(currentPageIndex + 1);
-      console.log('inside currentPageIndex == pageTokens.length - 1');
       fetchAndUpdateTweets(nextPageToken);
     } else {
-      console.log('inside currentPageIndex is not pageTokens.length - 1');
       fetchAndUpdateTweets(pageTokens[currentPageIndex]);
       setCurrentPageIndex(currentPageIndex + 1);
     }
   };
 
   const previousPage = () => {
-    if (currentPageIndex != 0) {
+    if (currentPageIndex !== 0) {
       fetchAndUpdateTweets(pageTokens[currentPageIndex - 1]);
       setCurrentPageIndex(currentPageIndex - 1);
     } else {
-      console.log('No previous tweets');
+      console.log('no previous tweets')
     }
   };
 
   const fetchAndUpdateTweets = async (pageToken) => {
-    setLoading(true);
     console.log('fetching...');
+    setLoading(true);
+
     const tweetsData = await fetchTweets(pageToken);
-    console.log(`next token: ${tweetsData.nextPageToken}`);
-    console.log(tweetsData.tweets);
     setTweets(tweetsData.tweets);
     setNextPageToken(tweetsData.nextPageToken);
-    console.log('finsihed fetching');
+
     setLoading(false);
+    console.log('finsihed fetching');
   };
 
   return (

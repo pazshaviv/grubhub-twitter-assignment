@@ -8,6 +8,8 @@
   width: 100%;
   display: flex;
   align-items: flex-start;
+  /* max-width: 200px; */
+  /* min-width: 400px; */
 }
 
 .author-name {

@@ -7,9 +7,9 @@ const Tweets = (props) => {
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   const tweets = props.tweets;
-  
+
   if (!tweets || tweets.length === 0) return <h2 className='no-tweets'>No tweets, sorry</h2>;
-  console.log(tweets);
+
   return (
     <div>
       <div className='tweets-container'>

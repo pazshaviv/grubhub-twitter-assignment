@@ -23,5 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 src/api/TwitterApiConf.json
-package.json
 package-lock.json
