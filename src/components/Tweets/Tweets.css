@@ -31,3 +31,7 @@
   display: flex;
   justify-content: center;
 }
+
+.pagination-button:hover{
+  background-color: #85c4eb;
+}
