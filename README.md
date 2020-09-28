@@ -6,7 +6,7 @@
 
 2. <code>docker build -t grubhub-tweets .</code>
 
-3. <code>docker run --rm --env REACT_APP_TWITTER_API_KEY="{Twitter Api Key}" -d -it -p 3000:3000/tcp grubhub-tweets:latest</code>
+3. <code>docker run --env REACT_APP_TWITTER_API_KEY="{Twitter Api Key}" -d -it -p 3000:3000/tcp grubhub-tweets:latest</code>
 
 4. go to <code>localhost:3000</code> in browser
 
